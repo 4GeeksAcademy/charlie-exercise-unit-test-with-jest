@@ -11,6 +11,8 @@ let oneEuroIs = {
     "USD": 1.07, // us dollar
     "GBP": 0.87, // british pound
 }
+let oneYenIs = {"GBP" : 0.0052};
+let oneDollarIs = {"JPY" : 151.49};
 
 // We declare the function with the exact name "fromEuroToDollar"
 const fromEuroToDollar = function(valueInEuro) {
@@ -32,7 +34,22 @@ const fromEuroToPound = function(valueInEuro) {
     return valueInPound;
 }
 
+/////////////////////////////
+
+const fromYenToPound = function(valueInYen) {
+    // Convert the given valueInEuro to pounds
+    let valueInPound = valueInYen * oneYenIs.GBP;
+    // return the pound value
+    return valueInPound;
+}
+const fromDollarToYen = function(valueInDollar) {
+    // Convert the given valueInEuro to pounds
+    let valueInYen = valueInDollar * oneDollarIs.JPY;
+    // return the pound value
+    return valueInYen;
+}
+
 
 // Export the function to be used on other files 
 // (similar to the keyword "export" when using webpack)
-module.exports = { sum, fromEuroToDollar, fromEuroToYen, fromEuroToPound, oneEuroIs };
+module.exports = { sum, fromEuroToDollar, fromEuroToYen, fromEuroToPound, fromYenToPound, fromDollarToYen, oneDollarIs, oneEuroIs, oneYenIs };
